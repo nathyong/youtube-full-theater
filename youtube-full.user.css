@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         youtube.com full-height theater
-@version      2023.08.26
+@version      2023.08.26.1
 @namespace    nathyong.github.io
 @description  make the theater mode full screen (auto-hide the top bar)
 
@@ -9,6 +9,7 @@
 ==/UserStyle== */
 
 @-moz-document domain("youtube.com") {
+ytd-watch-flexy[theater]:not([fullscreen]) #player-wide-container.ytd-watch-flexy,
 ytd-watch-flexy[theater]:not([fullscreen]) #full-bleed-container.ytd-watch-flexy,
 ytd-watch-flexy[theater]:not([fullscreen]) #player-full-bleed-container.ytd-watch-flexy {
 	height: 100vh;
