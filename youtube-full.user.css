@@ -1,13 +1,13 @@
 /* ==UserStyle==
 @name         youtube.com full-height theater
-@version      2024.06.02.0
+@version      2024.05.27.1
 @namespace    nathyong.github.io
 @description  make the theater mode full screen (auto-hide the top bar)
 
 @author       nathyong
 @license      AGPL 3.0
 ==/UserStyle== */
-@-moz-document url("www.youtube.com/watch") {
+@-moz-document url-prefix("https://www.youtube.com/watch") {
     html {
         --ytd-watch-flexy-sidebar-width: 600px !important;
     }
