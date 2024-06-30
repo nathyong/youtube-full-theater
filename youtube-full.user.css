@@ -15,6 +15,9 @@
     ytd-watch-flexy[theater]:not([fullscreen]) #player-wide-container.ytd-watch-flexy,
     ytd-watch-flexy[theater]:not([fullscreen]) #full-bleed-container.ytd-watch-flexy,
     ytd-watch-flexy[theater]:not([fullscreen]) #player-full-bleed-container.ytd-watch-flexy,
+    div#player-wide-container.ytd-watch-flexy,
+    div#full-bleed-container.ytd-watch-flexy,
+    div#player-full-bleed-container.ytd-watch-flexy,
     ytd-watch-grid[full-bleed-player] #player-full-bleed-container.ytd-watch-grid {
         height: 100vh;
         max-height: 100vh;
