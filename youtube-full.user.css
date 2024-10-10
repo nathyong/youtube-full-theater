@@ -1,13 +1,13 @@
 /* ==UserStyle==
 @name         youtube.com full-height theater
-@version      2024.10.10.0
+@version      2024.10.10.1
 @namespace    nathyong.github.io
 @description  make the theater mode full screen (auto-hide the top bar)
 
 @author       nathyong
 @license      AGPL 3.0
 ==/UserStyle== */
-@-moz-document url-prefix("https://www.youtube.com/watch") {
+@-moz-document url-prefix("https://www.youtube.com/") {
     html {
         --ytd-watch-flexy-sidebar-width: 600px !important;
     }
@@ -20,22 +20,18 @@
         max-height: 100vh;
     }
 
-    ytd-app:not([guide-persistent-and-visible]) ytd-page-manager {
-        margin-top: 0!important;
+    ytd-watch-flexy[theater]:not([fullscreen]) {
+        margin-top: calc(-1 * var(--ytd-masthead-height,var(--ytd-toolbar-height)));
     }
 
-    ytd-app:not([guide-persistent-and-visible]) #player-theater-container:empty ~ #columns #primary,
-    ytd-app:not([guide-persistent-and-visible]) #player-theater-container:empty ~ #columns #secondary {
-        padding-top: 56px;
+    ytd-masthead[theater][is-watch-page]:not([fullscreen]),
+    ytd-masthead[theater][is-watch-page]:not([fullscreen])::after {
+        transform: translateY(calc(-1 * var(--ytd-masthead-height,var(--ytd-toolbar-height))));
+        transition: transform .05s .1s ease-out;
     }
 
-    ytd-app:not([guide-persistent-and-visible]) ytd-masthead,
-    ytd-app:not([guide-persistent-and-visible]) #masthead-container.ytd-app::after {
-        transform: translateY(-56px);
-        transition: transform .1s .5s ease-out;
-    }
-    ytd-app:not([guide-persistent-and-visible]) #masthead-container:hover ytd-masthead,
-    ytd-app:not([guide-persistent-and-visible]) #masthead-container:hover.ytd-app::after {
+    #masthead-container:hover ytd-masthead[theater][is-watch-page]:not([fullscreen]),
+    #masthead-container:hover ytd-masthead[theater][is-watch-page]:not([fullscreen])::after {
         transform: translateY(0px);
     }
 }
